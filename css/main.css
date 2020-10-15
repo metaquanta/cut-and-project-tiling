@@ -11,7 +11,7 @@
     top: 0;
     left: 0;
     background-color: white;
-    width: 180px;
+    width: 220px;
     max-height: 100%;
     overflow: auto;
     border: solid;
@@ -19,8 +19,8 @@
 }
 #axisRosette {
     display: block;
-    height: 180px;
-    width: 180px;
+    height: 220px;
+    width: 220px;
     touch-action: none;
 }
 #offsetControls>div {

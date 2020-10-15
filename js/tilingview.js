@@ -127,8 +127,8 @@ export class TilingView {
         this.tracking = null;
         this.scale = GRID_SCALE_INIT;
 
-        canvas.width = canvas.clientWidth;
-        canvas.height = canvas.clientHeight;
+        canvas.width = canvas.clientWidth*window.devicePixelRatio;
+        canvas.height = canvas.clientHeight*window.devicePixelRatio;
 
         canvas.addEventListener('mousedown', this, false);
         canvas.addEventListener('mousemove', this, false);
@@ -287,8 +287,8 @@ export class TilingView {
     }
 
     resize() {
-        this.canvas.width = this.canvas.clientWidth;
-        this.canvas.height = this.canvas.clientHeight;
+        this.canvas.width = this.canvas.clientWidth*window.devicePixelRatio;
+        this.canvas.height = this.canvas.clientHeight*window.devicePixelRatio;
         this.app.redraw();
     }
 }

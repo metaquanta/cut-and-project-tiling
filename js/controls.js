@@ -35,8 +35,8 @@ export class AxisControls {
         this.canvas = canvas;
         this.app = app;
         this.tracking = null;
-        canvas.width = canvas.clientWidth;
-        canvas.height = canvas.clientHeight;
+        canvas.width = canvas.clientWidth*window.devicePixelRatio;
+        canvas.height = canvas.clientHeight*window.devicePixelRatio;
         canvas.addEventListener('mousedown', this, false);
         canvas.addEventListener('mousemove', this, false);
         canvas.addEventListener('mouseup', this, false);
@@ -64,7 +64,7 @@ export class AxisControls {
         ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
         ctx.translate(this.canvas.width/2, this.canvas.height/2);
-        ctx.scale(AXIS_CONTROL_SCALE, AXIS_CONTROL_SCALE);
+        ctx.scale(AXIS_CONTROL_SCALE*window.devicePixelRatio, AXIS_CONTROL_SCALE*window.devicePixelRatio);
 
         ctx.lineWidth = 1/AXIS_CONTROL_SCALE;
         ctx.strokeStyle = 'lightgrey';
@@ -118,8 +118,8 @@ export class AxisControls {
 
     toLocalPos(x, y) {
         return {
-            x: (x - this.canvas.width/2)/AXIS_CONTROL_SCALE,
-            y: (y - this.canvas.height/2)/AXIS_CONTROL_SCALE,
+            x: (x - this.canvas.width/2/window.devicePixelRatio)/AXIS_CONTROL_SCALE,
+            y: (y - this.canvas.height/2/window.devicePixelRatio)/AXIS_CONTROL_SCALE,
         };
     }
 
